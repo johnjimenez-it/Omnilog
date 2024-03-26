@@ -1,6 +1,4 @@
-To integrate the "Search and Add Friends" feature into your existing HTML structure, you simply need to incorporate the relevant sections into your document. Since you're looking to add this to your existing code, ensure the new sections are placed in the appropriate parts of your document, likely within the `<div class="main-content container">` or immediately after it, depending on your layout preferences.
-
-Based on your request to add it to the existing HTML, here is the complete updated document including the search and friend request functionality:
+Certainly! Below is your updated HTML code, including the link to an external JavaScript file named `script.js`. Just make sure you have the `script.js` file in the same directory as this HTML file when you upload it to GitHub.
 
 ```html
 <!DOCTYPE html>
@@ -105,7 +103,14 @@ Based on your request to add it to the existing HTML, here is the complete updat
         <!-- Search results will be dynamically inserted here -->
     </div>
 
-    <!-- Assuming the Friend Request Form will be shown after selecting a user from the search results -->
     <div class="friend-request-form" style="display:none;" id="friendRequestForm">
         <h2>Send Friend Request</h2>
-        <input type="text" id
+        <input type="text" id="friendMessage" placeholder="Add a message (Optional)">
+        <input type="text" id="friendNote" placeholder="Add note (Optional)">
+        <button onclick="sendFriendRequest()">Send Request</button>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>© 2024 OmniLog. Conscious Consumption
