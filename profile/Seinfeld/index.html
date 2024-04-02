@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seinfeld</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #424242;
+            color: #FFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .banner {
+            background-image: url(images/backdrop2.jpg);
+            background-size: cover;
+            background-position: top;
+            height: 200px;
+            box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 200px;
+        }
+        .omniloglogo
+        {
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            width: 200px;
+        }
+
+        .poster {
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .description {
+            float: left;
+            width: calc(100% - 240px);
+        }
+
+        .seasons {
+            margin-top: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .season {
+            display: inline-block;
+            margin-right: 10px;
+            width: 100px; /* Set a consistent width for the season images */
+        }
+
+        .season-row {
+            display: block; /* Display seasons in a block to stack them vertically */
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #FFF;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .arrow.left {
+            left: 0;
+        }
+
+        .arrow.right {
+            right: 0;
+        }
+
+        .reviews {
+            margin-top: 20px;
+            clear: both;
+        }
+
+        .review {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+   <a href="../../index.html"><img src="images/transparentlogo.png"  class="omniloglogo"></a> 
+    <div class="container">
+        
+        <div class="banner">
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+        <br>
+        <div class="content">
+            <img src="images/main.jpg" alt="Seinfeld Poster" class="poster">
+            <div class="description">
+                <div>
+                    <h2>Seinfeld</h2>
+                    
+                    1989-1998 | TV-PG
+                </div>
+                <p>The "show about nothing" is a sitcom landmark, with comic Jerry and his three sardonic friends finding
+                    laughs in both the mundane and the ridiculous.</p>
+                <div class="seasons">
+                    <div class="season-row">
+                        <img src="images/s1.jpg" alt="Season 1" class="season">
+                        <img src="images/s2.jpg" alt="Season 2" class="season">
+                        <img src="images/s3.jpg" alt="Season 3" class="season">
+                        <img src="images/s4.jpg" alt="Season 4" class="season">
+                        <img src="images/s5.jpg" alt="Season 5" class="season">
+                    </div>
+                    <div class="season-row">
+                        <img src="images/s6.jpg" alt="Season 6" class="season">
+                        <img src="images/s7.jpg" alt="Season 7" class="season">
+                        <img src="images/s8.jpg" alt="Season 8" class="season">
+                        <img src="images/s9.jpg" alt="Season 9" class="season">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <h2>Reviews</h2>
+            <div class="review">
+                <strong>reprogram6454</strong>
+                <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <p>This show is actually hilarious, but I can't stand the sight of Kramer. 4 stars.</p>
+            </div>
+            <div class="review">
+                <strong>undertake7501</strong>
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p>Very funny and quite topical indeed. I relate to George.</p>
+            </div>
+            <div class="review">
+                <strong>parting6921</strong>
+                <span>&#9733;&#9734;&#9734;&#9734;&#9734;</span>
+                <p>I never really understood this show. Who would make a show about nothing? Doesn't that defeat the purpose of a show?</p>
+            </div>
+            <div class="review">
+                <strong>stunt6372</strong>
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p>So glad I gave this one a chance.</p>
+            </div>
+            <div class="review">
+                <strong>cats9892</strong>
+                <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <p>My buddy @triceratopsfan223 put me on this one. Thanks man!</p>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+
+</html>
