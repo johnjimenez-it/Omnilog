@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniLog Media Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        #searchInput {
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .mediaResult {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .mediaInfo {
+            text-align: left;
+        }
+        .mediaCover img {
+            max-height: 200px;
+            border-radius: 5px;
+        }
+        #logo {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <img src="/mnt/data/Omni Log Logo.png" alt="OmniLog Logo" width="200">
+    </div>
+    <h1>OmniLog Media Search</h1>
+    
+    <input type="text" id="searchInput" placeholder="Search for albums, books, movies...">
+    <button onclick="searchMedia()">Search</button>
+    <button onclick="showAllMedia()">Show All Media</button>
+
+    <div id="searchResults"></div>
+
+    <script>
+        const media = [
+            // Your media data here
+        ];
+
+        function searchMedia() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const results = media.filter(item => item.title.toLowerCase().includes(searchTerm) ||
+                                                 item.date.startsWith(searchTerm));
+            let displayHtml = "";
+
+            if (results.length > 0) {
+                results.forEach(item => {
+                    displayHtml += `
+                        <div class="mediaResult">
+                            <div class="mediaInfo">
+                                <h2>${item.title} (${item.type})</h2>
+                                <p>By ${item.author}</p>
+                                <p>Release Date: ${item.date}</p>
+                                <p>${item.additionalInfo}</p>
+                                <p>${item.reviews}</p>
+                            </div>
+                            <div class="mediaCover">
+                                <img src="${item.url}" alt="${item.title} Cover">
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                displayHtml = "<p>No results found</p>";
+            }
+
+            document.getElementById("searchResults").innerHTML = displayHtml;
+        }
+
+        function showAllMedia() {
+            let displayHtml = "";
+            media.forEach(item => {
+                displayHtml += `
+                    <div class="mediaResult">
+                        <div class="mediaInfo">
+                            <h2>${item.title} (${item.type})</h2>
+                            <p>By ${item.author}</p>
+                            <p>Release Date: ${item.date}</p>
+                            <p>${item.additionalInfo}</p>
+                            <p>${item.reviews}</p>
+                        </div>
+                        <div class="mediaCover">
+                            <img src="${item.url}" alt="${item.title} Cover">
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById("searchResults").innerHTML = displayHtml;
+        }
+    </script>
+</body>
+</html>
