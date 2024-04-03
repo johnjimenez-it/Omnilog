@@ -1,116 +1,218 @@
-Certainly! Below is your updated HTML code, including the link to an external JavaScript file named `script.js`. Just make sure you have the `script.js` file in the same directory as this HTML file when you upload it to GitHub.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniLog - Conscious Consumption</title>
-    <style>
-        /* Basic Reset */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        /* Base Styles */
-        body { font-family: 'Calibri', sans-serif; line-height: 1.6; color: #333; }
-        img { width: 100%; }
-
-        /* Layout Styles */
-        .container { width: 80%; margin: auto; overflow: hidden; }
-        header { background-color: #f1f1f1; padding: 20px; }
-        .logo { float: left; }
-        .logo img { width: 150px; }
-
-        /* Navigation Styles */
-        nav { background: #333; color: #fff; padding: 15px; text-align: center; }
-        nav a { color: #fff; text-decoration: none; padding: 5px 20px; }
-        nav a:hover { background: #50b7f5; }
-
-        /* Main Content Styles */
-        .main-content { padding: 20px; }
-        .main-content h2 { color: #333; }
-        .main-content p { margin-bottom: 10px; }
-
-        /* Footer Styles */
-        footer { background-color: #f1f1f1; color: #333; text-align: center; padding: 10px; margin-top: 20px; }
-
-        /* Additional styles for Search and Add Friends feature */
-        .search-container, .friend-request-form {
-            padding: 20px;
-            margin: 20px 0;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-        .search-container h2, .friend-request-form h2 {
-            color: #333;
-        }
-        input[type="text"], input[type="date"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .search-results, .friend-request {
-            margin: 20px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniLog - Home</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <div class="logo">OmniLog</div>
+    <input type="text" placeholder="Search..." class="search-box">
+    <button class="log-btn">Log New Media</button>
+  </header>
+  
+  <main>
+    
+	
+<section class="title" style="background-color: #FFFFFF; text-align: center">
 
-<header>
-    <div class="container">
-        <div class="logo">
-            <!-- Replace 'placeholder-logo.png' with the actual logo file name -->
-            <img src="placeholder-logo.png" alt="OmniLog Logo">
-        </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Explore New Media</a>
-            <a href="#">Profile</a>
-            <a href="#">Log In/Sign Up</a>
-        </nav>
-    </div>
-</header>
+	<img src="img/logo.png" alt="logo">
+	<br>
+	<button class="title-btns" id="logNewMediaBtn">Log New Media</button>
+	<button class="title-btns" id="myProfilebtn">My Profile</button>
+	<br>
+	<br>
+	
+</section>
+	
 
-<div class="main-content container">
-    <h2>Welcome to OmniLog</h2>
-    <p>Connect with friends and discover media in a mindful way. Log, review, and share your experiences with TV shows, movies, books, and music.</p>
 
-    <!-- Search and Add Friends Section -->
-    <div class="search-container">
-        <h2>Search for Friends</h2>
-        <input type="text" id="searchFriends" placeholder="Search by username...">
-        <button onclick="searchFriends()">Search</button>
-    </div>
+<section class="popular-section" style="background-color: #424242;">
+  <h2>What's Popular</h2>
+  <div class="media-container">
+	
+		<div class="media-item">
+			<h3>Breaking Bad</h3>
+			<img src="img/bb.jpg" alt="breakingbad" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >TV Show</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+		<div class="media-item">
+			<h3>Avengers</h3>
+			<img src="img/avengers.jpg" alt="Avengers" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >Movie</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+		<div class="media-item">
+			<h3>Sirens of Titan</h3>
+			<img src="img/sirens.jpg" alt="Sirens of Titan" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >Book</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+		<div class="media-item">
+			<h3>Starboy</h3>
+			<img src="img/weeknd.jpg" alt="Star Boy" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >Music</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+	</div>
+  
+</section>
 
-    <div class="search-results" id="searchResults">
-        <!-- Search results will be dynamically inserted here -->
-    </div>
 
-    <div class="friend-request-form" style="display:none;" id="friendRequestForm">
-        <h2>Send Friend Request</h2>
-        <input type="text" id="friendMessage" placeholder="Add a message (Optional)">
-        <input type="text" id="friendNote" placeholder="Add note (Optional)">
-        <button onclick="sendFriendRequest()">Send Request</button>
-    </div>
-</div>
+    <section class="friends-section">
+      <h2>What Friends are Logging Now</h2>
+		<div class="media-container">
+			<div class="media-item-friends">
+			<h3>The Mandalorian</h3>
+			<img src="img/mado.jpg" alt="Mandalorian" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4><a href="index.html">John Smith</a> Highly Recommends</h4>
+				<h4 style="text-align: left; margin-left: 15px" >TV Show</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+			<div class="media-item-friends">
+			<h3>Snow Crash</h3>
+			<img src="img/OIP.jpg" alt="Snow Crash" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4><a href="index.html">John Smith</a> Highly Recommends</h4>
+				<h4 style="text-align: left; margin-left: 15px" >Book</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		</div>
+	  
+	  
+	  
+    </section>
 
-<footer>
-    <div class="container">
-        <p>© 2024 OmniLog. Conscious Consumption
+    <section class="recommended-section"  >
+      <h2>Explore Recommended Media</h2>
+	  <h3 style="color:white;">Recommendations based off media you have logged</h3>
+      <!-- Display recommended media here -->
+	  
+		<div class="media-container">
+		
+		<div class="media-item">
+			<h3>Stranger Things</h3>
+			<img src="img/strangerthings.jpg" alt="Stranger Things" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >TV Show</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+		<div class="media-item">
+			<h3>Inception</h3>
+			<img src="img/inception.jpg" alt="Inception" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >Movie</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+		<div class="media-item">
+			<h3>Institute</h3>
+			<img src="img/institute.jpg" alt="Institute" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >Book</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+		<div class="media-item">
+			<h3>All-Star</h3>
+			<img src="img/allstar.jpg" alt="AllStar" width="200" height="180">
+			<div style="background-color: #A9A9A9;">
+				<h4 style="text-align: left; margin-left: 15px" >Music</h4>
+				<img src="img/glass.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+				<img src="img/starfr.png">
+			</div>
+		</div>
+		
+		</div>
+		
+		
+	  
+	  
+	  
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
