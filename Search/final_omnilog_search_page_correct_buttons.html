@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniLog Media Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        #searchInput {
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .mediaResult {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .mediaInfo {
+            text-align: left;
+        }
+        .mediaCover img {
+            max-height: 200px;
+            border-radius: 5px;
+        }
+        #logo {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <img src="/mnt/data/Omni Log Logo.png" alt="OmniLog Logo" width="200">
+    </div>
+    <h1>OmniLog Media Search</h1>
+    
+
+<input type="text" id="searchInput" placeholder="Search for albums, books, movies...">
+<button onclick="searchMedia()">Search</button>
+<button onclick="showAllMedia()">Show All Media</button>
+
+
+    <button onclick="searchMedia()">Search</button>
+    <div id="searchResults"></div>
+
+    <script>
+        const media = [
+            {
+                type: "Album",
+                title: "Starboy",
+                url: "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png",
+                author: "The Weeknd",
+                date: "2016",
+                additionalInfo: "Label: XO, Republic",
+                reviews: "4.5 stars (2500 reviews)"
+            },
+            // Add more media objects for books, movies, TV shows, etc.
+        
+            {
+                type: "Book",
+                title: "The Great Gatsby",
+                url: "https://upload.wikimedia.org/wikipedia/en/f/f7/TheGreatGatsby_1925jacket.jpeg",
+                author: "F. Scott Fitzgerald",
+                date: "1925",
+                additionalInfo: "Genre: Novel, Fiction",
+                reviews: "4.7 stars (5800 reviews)"
+            },
+            {
+                type: "Movie",
+                title: "Inception",
+                url: "https://upload.wikimedia.org/wikipedia/en/7/7f/Inception_ver3.jpg",
+                author: "Christopher Nolan",
+                date: "2010",
+                additionalInfo: "Genre: Science Fiction, Action",
+                reviews: "4.8 stars (3200 reviews)"
+            },
+            {
+                type: "TV Show",
+                title: "Breaking Bad",
+                url: "https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png",
+                author: "Vince Gilligan",
+                date: "2008-2013",
+                additionalInfo: "Genre: Crime, Drama, Thriller",
+                reviews: "4.9 stars (4600 reviews)"
+            },
+
+            {
+                type: "Album",
+                title: "Future Nostalgia",
+                url: "https://upload.wikimedia.org/wikipedia/en/3/3c/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png",
+                author: "Dua Lipa",
+                date: "2020",
+                additionalInfo: "Genre: Pop",
+                reviews: "4.8 stars (312 reviews)"
+            },
+            {
+                type: "Book",
+                title: "1984",
+                url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/1984first.jpg",
+                author: "George Orwell",
+                date: "1949",
+                additionalInfo: "Genre: Dystopian Fiction",
+                reviews: "4.6 stars (4287 reviews)"
+            },
+            {
+                type: "Movie",
+                title: "The Matrix",
+                url: "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
+                author: "The Wachowskis",
+                date: "1999",
+                additionalInfo: "Genre: Action, Science Fiction",
+                reviews: "4.7 stars (2554 reviews)"
+            },
+            {
+                type: "TV Show",
+                title: "Stranger Things",
+                url: "https://upload.wikimedia.org/wikipedia/en/f/f7/Stranger_Things_season_4_volume_1.png",
+                author: "The Duffer Brothers",
+                date: "2016-present",
+                additionalInfo: "Genre: Drama, Fantasy, Horror",
+                reviews: "4.5 stars (5210 reviews)"
+            },
+
+            {
+                type: "Album",
+                title: "Abbey Road",
+                url: "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",
+                author: "The Beatles",
+                date: "1969",
+                additionalInfo: "Genre: Rock",
+                reviews: "4.9 stars (3500 reviews)"
+            },
+            {
+                type: "Book",
+                title: "Harry Potter and the Sorcerer's Stone",
+                url: "https://upload.wikimedia.org/wikipedia/en/6/62/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+                author: "J.K. Rowling",
+                date: "1997",
+                additionalInfo: "Genre: Fantasy",
+                reviews: "4.8 stars (12000 reviews)"
+            },
+            {
+                type: "Movie",
+                title: "Avengers: Endgame",
+                url: "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
+                author: "Anthony and Joe Russo",
+                date: "2019",
+                additionalInfo: "Genre: Superhero, Action",
+                reviews: "4.7 stars (9500 reviews)"
+            },
+            {
+                type: "TV Show",
+                title: "Game of Thrones",
+                url: "https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg",
+                author: "David Benioff and D.B. Weiss",
+                date: "2011-2019",
+                additionalInfo: "Genre: Fantasy, Drama",
+                reviews: "4.3 stars (8700 reviews)"
+            },
+];
+
+        
+        function searchMedia() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const results = media.filter(item => item.title.toLowerCase().includes(searchTerm) ||
+                                                 item.date.startsWith(searchTerm));
+            let displayHtml = "";
+
+            if (results.length > 0) {
+                results.forEach(item => {
+                    displayHtml += `
+                        <div class="mediaResult">
+                            <div class="mediaInfo">
+                                <h2>${item.title} (${item.type})</h2>
+                                <p>By ${item.author}</p>
+                                <p>Release Date: ${item.date}</p>
+                                <p>${item.additionalInfo}</p>
+                                <p>${item.reviews}</p>
+                            <p>${item.reviews}</p></div>
+                            <div class="mediaCover">
+                                <img src="${item.url}" alt="${item.title} Cover">
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                displayHtml = "<p>No results found</p>";
+            }
+
+            document.getElementById("searchResults").innerHTML = displayHtml;
+        }
+
+    
+function showAllMedia() {
+    let displayHtml = "";
+    media.forEach(item => {
+        displayHtml += `
+            <div class="mediaResult">
+                <div class="mediaInfo">
+                    <h2>${item.title} (${item.type})</h2>
+                    <p>By ${item.author}</p>
+                    <p>Release Date: ${item.date}</p>
+                    <p>${item.additionalInfo}</p>
+                    <p>${item.reviews}</p>
+                </div>
+                <div class="mediaCover">
+                    <img src="${item.url}" alt="${item.title} Cover">
+                </div>
+            </div>
+        `;
+    });
+    document.getElementById("searchResults").innerHTML = displayHtml;
+}
+</script>
+</body>
+</html>
