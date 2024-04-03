@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friends</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #424242;
+    }
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-bar {
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+        
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profiles-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .profile-info {
+        background-color: rgb(255, 255, 255);
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px 40px;
+        border: #333;
+        box-shadow: 0 0 20px 25px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        width: calc(30% - 40px);
+        max-width: 300px;
+    }
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+    .profile-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .name {
+        color: black;
+        margin-bottom: 4px;
+    }
+    
+    .username {
+        background-color: #a7a7a7;
+        padding: 4px 8px;
+        border-radius: 4px;
+        color: black;
+    }
+    .edit-friend-button {
+        background-color: black;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3;
+    }
+    .edit-friend-button:hover{
+        background-color: red;
+    }
+
+    .favorites {
+        width: 100%;
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
+    .favorite-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px 40px;
+    }
+    .favorite-item img {
+        width: 5px;
+        height: 5px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="nav-bar">
+        <img src="../img/logo.png" alt="Logo" class="logo">
+    </div>
+    <div>
+        <h1 style="color:white; padding-top: 40px;">Friends</h1>
+    </div>
+    <div class="profiles-container">
+        <!-- Profile 1 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 1</span>
+                    <div class="username">@example1</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 2</span>
+                    <div class="username">@example2</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profle 3 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 3</span>
+                    <div class="username">@example3</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 4 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 4</span>
+                    <div class="username">@example4</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 5 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 5</span>
+                    <div class="username">@example5</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 6 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 6</span>
+                    <div class="username">@example6</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+</div>
+</body>
+</html>

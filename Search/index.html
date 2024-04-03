@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #424242;
             padding: 20px;
             text-align: center;
         }
@@ -50,17 +50,15 @@
 </head>
 <body>
     <div id="logo">
-        <img src="/mnt/data/Omni Log Logo.png" alt="OmniLog Logo" width="200">
+        <a href="../"><img src="../profile/images/omnilog.png" alt="OmniLog Logo" width="200"></a>
     </div>
-    <h1>OmniLog Media Search</h1>
+    <h1 style="color: #fff;">OmniLog Media Search</h1>
     
-
 <input type="text" id="searchInput" placeholder="Search for albums, books, movies...">
 <button onclick="searchMedia()">Search</button>
 <button onclick="showAllMedia()">Show All Media</button>
 
-
-    <button onclick="searchMedia()">Search</button>
+    
     <div id="searchResults"></div>
 
     <script>
@@ -177,6 +175,16 @@
                 additionalInfo: "Genre: Fantasy, Drama",
                 reviews: "4.3 stars (8700 reviews)"
             },
+
+            {
+                type: "TV Show",
+                title: '<a href="https://johnjimenez-it.github.io/Omnilog/profile/Seinfeld/index.html">Seinfeld</a>',
+                url: "https://johnjimenez-it.github.io/Omnilog/profile/Seinfeld/images/main.jpg",
+                author: "Larry David, Jerry Seinfeld",
+                date: "1989-1998",
+                additionalInfo: "Genre: Comedy",
+                reviews: "4.8 stars (15000 reviews)"
+            },
 ];
 
         
@@ -195,10 +203,9 @@
                                 <p>By ${item.author}</p>
                                 <p>Release Date: ${item.date}</p>
                                 <p>${item.additionalInfo}</p>
-                                <p>${item.reviews}</p>
                             <p>${item.reviews}</p></div>
                             <div class="mediaCover">
-                                <img src="${item.url}" alt="${item.title} Cover">
+                                <img src="${item.url}">
                             </div>
                         </div>
                     `;
