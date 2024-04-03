@@ -6,7 +6,7 @@ var search = document.getElementById('search');
 // Add a click event listener to the button
 logNewMediaBtn.addEventListener('click', function() {
   
-  window.location.href = 'profile'; 
+  window.location.href = 'Search'; 
 });
 
 myProfileBtn.addEventListener('click', function() {
