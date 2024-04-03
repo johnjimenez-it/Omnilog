@@ -32,17 +32,23 @@
         width: 100px;
         height: 100px;
     }
+    .profiles-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
     .profile-info {
-    background-color: rgb(255, 255, 255);
-    padding: 50px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 16%;
-    margin-top: 40px;
-    border: #333;
-    box-shadow: 0 0 20px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+        background-color: rgb(255, 255, 255);
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px 40px;
+        border: #333;
+        box-shadow: 0 0 20px 25px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        width: calc(30% - 40px);
+        max-width: 300px;
     }
 
     .profile-pic {
@@ -65,12 +71,16 @@
         border-radius: 4px;
         color: black;
     }
-    .edit-profile-button {
+    .edit-friend-button {
         background-color: black;
         color: white;
         padding: 8px 16px;
         border-radius: 4px;
         cursor: pointer;
+        transition: background-color 0.3;
+    }
+    .edit-friend-button:hover{
+        background-color: red;
     }
     .favorites {
         width: 100%;
@@ -88,11 +98,12 @@
         margin: 0 20px 40px;
     }
     .favorite-item img {
-        width: 225px;
-        height: 253px;
+        width: 5px;
+        height: 5px;
         margin-bottom: 10px;
     }
 </style>
+</head>
 <body>
 <div class="container">
     <div class="nav-bar">
@@ -101,7 +112,78 @@
     <div>
         <h1 style="color:white; padding-top: 40px;">Friends</h1>
     </div>
+    <div class="profiles-container">
+        <!-- Profile 1 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 1</span>
+                    <div class="username">@example1</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 2</span>
+                    <div class="username">@example2</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profle 3 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 3</span>
+                    <div class="username">@example3</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 4 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 4</span>
+                    <div class="username">@example4</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 5 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 5</span>
+                    <div class="username">@example5</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
+
+        <!-- Profile 6 -->
+        <div class="profile-info">
+            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-details">
+                <div>
+                    <span class="name">Example User 6</span>
+                    <div class="username">@example6</div>
+                </div>
+                <button class="edit-friend-button">Remove Friend</button>
+            </div>
+        </div>
 </div>
 </body>
-</head>
 </html>
