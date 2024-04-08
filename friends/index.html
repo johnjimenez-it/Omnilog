@@ -140,7 +140,7 @@
                     <span class="name">John Smith</span>
                     <div class="username">@Jsmith</div>
                 </div>
-                <button class="edit-friend-button">Remove Friend</button>
+                <button class="edit-friend-button" onclick="toggleFriendStatus(this)">Remove Friend</button>
             </div>
         </div>
 
@@ -152,7 +152,7 @@
                     <span class="name">Aurora Blake</span>
                     <div class="username">@AuroraBreeze</div>
                 </div>
-                <button class="edit-friend-button">Remove Friend</button>
+                <button class="edit-friend-button" onclick="toggleFriendStatus(this)">Remove Friend</button>
             </div>
         </div>
 
@@ -164,7 +164,7 @@
                     <span class="name">Jasper Hartley</span>
                     <div class="username">@JazzyJasper</div>
                 </div>
-                <button class="edit-friend-button">Remove Friend</button>
+                <button class="edit-friend-button" onclick="toggleFriendStatus(this)">Remove Friend</button>
             </div>
         </div>
 
@@ -176,7 +176,7 @@
                     <span class="name">Serena Nguyen</span>
                     <div class="username">@SereneSerenity</div>
                 </div>
-                <button class="edit-friend-button">Remove Friend</button>
+                <button class="edit-friend-button" onclick="toggleFriendStatus(this)">Remove Friend</button>
             </div>
         </div>
 
@@ -188,7 +188,7 @@
                     <span class="name">Malik Santiago</span>
                     <div class="username">@MaverickMalik</div>
                 </div>
-                <button class="edit-friend-button">Remove Friend</button>
+                <button class="edit-friend-button" onclick="toggleFriendStatus(this)">Remove Friend</button>
             </div>
         </div>
 
@@ -200,19 +200,25 @@
                     <span class="name">Isabella Chang</span>
                     <div class="username">@BellaCharm</div>
                 </div>
-                <button class="edit-friend-button" onclick="confirmRemove('Isabella Chang', '@ABellaCharm')">Remove Friend</button>
+                <button class="edit-friend-button" onclick="toggleFriendStatus(this)">Remove Friend</button>
             </div>
         </div>
     </div>
 </div>
 <script>
-    function confirmRemove(name, username) {
-        if (confirm(`Are you sure you want to remove ${name} (${username}) from your friends?`)) {
-            // Remove friend from the screen
-            // You can implement the logic to remove the friend from the screen here
-            // For example, you can remove the entire profile-info div
-            // This is just a placeholder
-            alert(`${name} (${username}) has been removed from your friends.`);
+    function toggleFriendStatus(button) {
+        // Get the current text of the button
+        var buttonText = button.textContent.trim();
+
+        // Check if the current text is "Remove Friend"
+        if (buttonText === "Remove Friend") {
+            // Change button text to "Add Friend"
+            button.textContent = "Add Friend";
+            // You can add more logic here to handle the removal from the list
+        } else {
+            // Change button text back to "Remove Friend"
+            button.textContent = "Remove Friend";
+            // You can add more logic here to handle adding the friend to the list
         }
     }
 </script>
