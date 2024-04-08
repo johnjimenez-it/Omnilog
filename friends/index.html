@@ -68,6 +68,7 @@
         width: 100px;
         height: 100px;
         margin-right: 20px;
+        border-radius: 50%;
     }
     .profile-details {
         display: flex;
@@ -131,11 +132,11 @@
     <div class="profiles-container">
         <!-- Profile 1 -->
         <div class="profile-info">
-            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <img src="images/Jsmith.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-details">
                 <div>
-                    <span class="name">Example User 1</span>
-                    <div class="username">@example1</div>
+                    <span class="name">John Smith</span>
+                    <div class="username">@Jsmith</div>
                 </div>
                 <button class="edit-friend-button">Remove Friend</button>
             </div>
@@ -143,11 +144,11 @@
 
         <!-- Profile 2 -->
         <div class="profile-info">
-            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <img src="images/Ablake.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-details">
                 <div>
-                    <span class="name">Example User 2</span>
-                    <div class="username">@example2</div>
+                    <span class="name">Aurora Blake</span>
+                    <div class="username">@AuroraBreeze</div>
                 </div>
                 <button class="edit-friend-button">Remove Friend</button>
             </div>
@@ -155,11 +156,11 @@
 
         <!-- Profle 3 -->
         <div class="profile-info">
-            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <img src="images/Jhartley.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-details">
                 <div>
-                    <span class="name">Example User 3</span>
-                    <div class="username">@example3</div>
+                    <span class="name">Jasper Hartley</span>
+                    <div class="username">@JazzyJasper</div>
                 </div>
                 <button class="edit-friend-button">Remove Friend</button>
             </div>
@@ -167,11 +168,11 @@
 
         <!-- Profile 4 -->
         <div class="profile-info">
-            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <img src="images/Snguyen.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-details">
                 <div>
-                    <span class="name">Example User 4</span>
-                    <div class="username">@example4</div>
+                    <span class="name">Serena Nguyen</span>
+                    <div class="username">@SereneSerenity</div>
                 </div>
                 <button class="edit-friend-button">Remove Friend</button>
             </div>
@@ -179,11 +180,11 @@
 
         <!-- Profile 5 -->
         <div class="profile-info">
-            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <img src="images/Msantiago.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-details">
                 <div>
-                    <span class="name">Example User 5</span>
-                    <div class="username">@example5</div>
+                    <span class="name">Malik Santiago</span>
+                    <div class="username">@MaverickMalik</div>
                 </div>
                 <button class="edit-friend-button">Remove Friend</button>
             </div>
@@ -191,16 +192,27 @@
 
         <!-- Profile 6 -->
         <div class="profile-info">
-            <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+            <img src="images/Ichang.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-details">
                 <div>
-                    <span class="name">Example User 6</span>
-                    <div class="username">@example6</div>
+                    <span class="name">Isabella Chang</span>
+                    <div class="username">@BellaCharm</div>
                 </div>
-                <button class="edit-friend-button">Remove Friend</button>
+                <button class="edit-friend-button" onclick="confirmRemove('Isabella Chang', '@ABellaCharm')">Remove Friend</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function confirmRemove(name, username) {
+        if (confirm(`Are you sure you want to remove ${name} (${username}) from your friends?`)) {
+            // Remove friend from the screen
+            // You can implement the logic to remove the friend from the screen here
+            // For example, you can remove the entire profile-info div
+            // This is just a placeholder
+            alert(`${name} (${username}) has been removed from your friends.`);
+        }
+    }
+</script>
 </body>
 </html>
